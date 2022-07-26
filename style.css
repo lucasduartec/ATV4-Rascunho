@@ -1,0 +1,30 @@
+#div {
+  border: 1px solid blue;
+}
+
+#margemcima {
+  color: white;
+  background-color: green;
+  height: 30vh;
+}
+
+#rio {
+  color: white;
+  background-color: blue;
+  height: 30vh;
+}
+
+#margembaixo {
+  color: white;
+  background-color: green;
+  height: 30vh;
+}
+
+.elemento {
+  display: inline-block;
+  font-size: 5em;
+}
+
+#atravessar {
+  float: right;
+}
