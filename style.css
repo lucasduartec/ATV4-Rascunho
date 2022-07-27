@@ -35,14 +35,16 @@
   font-size: 5em;
 }
 
-#cima{
+.parte_rio {
   border: 1px solid black;
   display: flex;
   height: 20vh;
+  width: 20%;
+  justify-content: center;
+  background-color: rgb(139, 92, 3);
+  border-radius: 25px;
 }
 
-#baixo{
-  border: 1px solid black;
-  display: flex;
-  height: 20vh;
+#baixo {
+  visibility: hidden;
 }

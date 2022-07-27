@@ -32,10 +32,14 @@ function moveAlface(event) {
 
 function descer(event) {
   while (cima.firstChild) baixo.appendChild(cima.firstChild);
+  baixo.style.visibility = "visible";
+  cima.style.visibility = "hidden";
 }
 
 function subir(event) {
   while (baixo.firstChild) cima.appendChild(baixo.firstChild);
+  cima.style.visibility = "visible";
+  baixo.style.visibility = "hidden";
 }
 
 function embarque_desembarque(passageiro) {
