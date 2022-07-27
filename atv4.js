@@ -15,61 +15,19 @@ desce.addEventListener("click", descer);
 sobe.addEventListener("click", subir);
 
 function moveFazendeiro(event) {
-  // Parte de cima
-
-  if (fazendeiro.parentElement == margemcima) {
-    if (cima.childElementCount == 2) return;
-    else cima.appendChild(fazendeiro);
-  } else if (fazendeiro.parentElement == cima)
-    margemcima.appendChild(fazendeiro);
-  //Parte de baixo
-  else if (fazendeiro.parentElement == margembaixo) {
-    if (baixo.childElementCount == 2) return;
-    else baixo.appendChild(fazendeiro);
-  } else if (fazendeiro.parentElement == baixo)
-    margembaixo.appendChild(fazendeiro);
+  embarque_desembarque(fazendeiro);
 }
 
 function moveLobo(event) {
-  // Parte de cima
-
-  if (lobo.parentElement == margemcima) {
-    if (cima.childElementCount == 2) return;
-    else cima.appendChild(lobo);
-  } else if (lobo.parentElement == cima) margemcima.appendChild(lobo);
-  //Parte de baixo
-  else if (lobo.parentElement == margembaixo) {
-    if (baixo.childElementCount == 2) return;
-    else baixo.appendChild(lobo);
-  } else if (lobo.parentElement == baixo) margembaixo.appendChild(lobo);
+  embarque_desembarque(lobo);
 }
 
 function moveCarneiro(event) {
-  // Parte de cima
-
-  if (carneiro.parentElement == margemcima) {
-    if (cima.childElementCount == 2) return;
-    else cima.appendChild(carneiro);
-  } else if (carneiro.parentElement == cima) margemcima.appendChild(carneiro);
-  //Parte de baixo
-  else if (carneiro.parentElement == margembaixo) {
-    if (baixo.childElementCount == 2) return;
-    else baixo.appendChild(carneiro);
-  } else if (carneiro.parentElement == baixo) margembaixo.appendChild(carneiro);
+  embarque_desembarque(carneiro);
 }
 
 function moveAlface(event) {
-  // Parte de cima
-
-  if (alface.parentElement == margemcima) {
-    if (cima.childElementCount == 2) return;
-    else cima.appendChild(alface);
-  } else if (alface.parentElement == cima) margemcima.appendChild(alface);
-  //Parte de baixo
-  else if (alface.parentElement == margembaixo) {
-    if (baixo.childElementCount == 2) return;
-    else baixo.appendChild(alface);
-  } else if (alface.parentElement == baixo) margembaixo.appendChild(alface);
+  embarque_desembarque(alface);
 }
 
 function descer(event) {
@@ -78,4 +36,19 @@ function descer(event) {
 
 function subir(event) {
   while (baixo.firstChild) cima.appendChild(baixo.firstChild);
+}
+
+function embarque_desembarque(passageiro) {
+  //Parte de cima
+  if (passageiro.parentElement == margemcima) {
+    if (cima.childElementCount == 2) return;
+    else cima.appendChild(passageiro);
+  } else if (passageiro.parentElement == cima)
+    margemcima.appendChild(passageiro);
+  //Parte de baixo
+  else if (passageiro.parentElement == margembaixo) {
+    if (baixo.childElementCount == 2) return;
+    else baixo.appendChild(passageiro);
+  } else if (passageiro.parentElement == baixo)
+    margembaixo.appendChild(passageiro);
 }
