@@ -31,15 +31,19 @@ function moveAlface(event) {
 }
 
 function descer(event) {
-  while (cima.firstChild) baixo.appendChild(cima.firstChild);
-  baixo.style.visibility = "visible";
-  cima.style.visibility = "hidden";
+  if (avaliaDescida() == true) {
+    while (cima.firstChild) baixo.appendChild(cima.firstChild);
+    baixo.style.visibility = "visible";
+    cima.style.visibility = "hidden";
+  }
 }
 
 function subir(event) {
-  while (baixo.firstChild) cima.appendChild(baixo.firstChild);
-  cima.style.visibility = "visible";
-  baixo.style.visibility = "hidden";
+  if (avaliaSubida() == true) {
+    while (baixo.firstChild) cima.appendChild(baixo.firstChild);
+    cima.style.visibility = "visible";
+    baixo.style.visibility = "hidden";
+  }
 }
 
 function embarque_desembarque(passageiro) {
@@ -55,4 +59,14 @@ function embarque_desembarque(passageiro) {
     else baixo.appendChild(passageiro);
   } else if (passageiro.parentElement == baixo)
     margembaixo.appendChild(passageiro);
+}
+
+function avaliaDescida() {
+  if (fazendeiro.parentElement == cima) return true;
+  else return false;
+}
+
+function avaliaSubida() {
+  if (fazendeiro.parentElement == baixo) return true;
+  else return false;
 }
