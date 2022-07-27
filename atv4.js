@@ -70,3 +70,31 @@ function avaliaSubida() {
   if (fazendeiro.parentElement == baixo) return true;
   else return false;
 }
+
+function avaliaDerrota() {
+  if (margemcima.childElementCount == 3) {
+    if (
+      lobo.parentElement == margemcima &&
+      carneiro.parentElement == margemcima
+    )
+      return true;
+    else if (
+      carneiro.parentElement == margemcima &&
+      alface.parentElement == margemcima
+    )
+      return true;
+    else return false;
+  } else if (margembaixo.childElementCount == 3) {
+    if (
+      lobo.parentElement == margembaixo &&
+      carneiro.parentElement == margembaixo
+    )
+      return true;
+    else if (
+      carneiro.parentElement == margembaixo &&
+      alface.parentElement == margembaixo
+    )
+      return true;
+    else return false;
+  }
+}
