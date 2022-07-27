@@ -11,7 +11,7 @@
 #rio {
   color: white;
   background-color: blue;
-  height: 35vh;
+  height: 40vh;
 }
 
 #margembaixo {
@@ -25,6 +25,24 @@
   font-size: 5em;
 }
 
-#atravessar {
+#desce {
   float: right;
+  font-size: 5em;
+}
+
+#sobe {
+  float: right;
+  font-size: 5em;
+}
+
+#cima{
+  border: 1px solid black;
+  display: flex;
+  height: 20vh;
+}
+
+#baixo{
+  border: 1px solid black;
+  display: flex;
+  height: 20vh;
 }
