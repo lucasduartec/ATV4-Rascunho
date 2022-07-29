@@ -74,6 +74,7 @@ function embarque_desembarque(passageiro) {
     else baixo.appendChild(passageiro);
   } else if (passageiro.parentElement == baixo)
     margembaixo.appendChild(passageiro);
+  avaliaVitoria();
 }
 
 function avaliaDescida() {
@@ -101,7 +102,7 @@ function avaliaDerrota() {
       alert("Você perdeu!");
       resetar();
     }
-  } else if (margembaixo.childElementCount == 4) {
+  } else if (margembaixo.childElementCount == 3) {
     if (
       lobo.parentElement == margembaixo &&
       carneiro.parentElement == margembaixo
@@ -115,5 +116,17 @@ function avaliaDerrota() {
       alert("Você perdeu!");
       resetar();
     }
+  }
+}
+
+function avaliaVitoria() {
+  if (
+    fazendeiro.parentElement == margembaixo &&
+    lobo.parentElement == margembaixo &&
+    carneiro.parentElement == margembaixo &&
+    alface.parentElement == margembaixo
+  ) {
+    alert("Você ganhou!");
+    resetar();
   }
 }
