@@ -37,6 +37,7 @@ function descer(event) {
     while (cima.firstChild) baixo.appendChild(cima.firstChild);
     baixo.style.visibility = "visible";
     cima.style.visibility = "hidden";
+    avaliaDerrota();
   }
 }
 
@@ -45,6 +46,7 @@ function subir(event) {
     while (baixo.firstChild) cima.appendChild(baixo.firstChild);
     cima.style.visibility = "visible";
     baixo.style.visibility = "hidden";
+    avaliaDerrota();
   }
 }
 
@@ -60,13 +62,15 @@ function resetar(event) {
 function embarque_desembarque(passageiro) {
   //Parte de cima
   if (passageiro.parentElement == margemcima) {
-    if (cima.childElementCount == 2) return;
+    if (cima.childElementCount == 2 || cima.style.visibility == "hidden")
+      return;
     else cima.appendChild(passageiro);
   } else if (passageiro.parentElement == cima)
     margemcima.appendChild(passageiro);
   //Parte de baixo
   else if (passageiro.parentElement == margembaixo) {
-    if (baixo.childElementCount == 2) return;
+    if (baixo.childElementCount == 2 || baixo.style.visibility == "hidden")
+      return;
     else baixo.appendChild(passageiro);
   } else if (passageiro.parentElement == baixo)
     margembaixo.appendChild(passageiro);
@@ -83,29 +87,33 @@ function avaliaSubida() {
 }
 
 function avaliaDerrota() {
-  if (margemcima.childElementCount == 3) {
+  if (margemcima.childElementCount == 4) {
     if (
       lobo.parentElement == margemcima &&
       carneiro.parentElement == margemcima
-    )
-      return true;
-    else if (
+    ) {
+      alert("Você perdeu!");
+      resetar();
+    } else if (
       carneiro.parentElement == margemcima &&
       alface.parentElement == margemcima
-    )
-      return true;
-    else return false;
-  } else if (margembaixo.childElementCount == 3) {
+    ) {
+      alert("Você perdeu!");
+      resetar();
+    }
+  } else if (margembaixo.childElementCount == 4) {
     if (
       lobo.parentElement == margembaixo &&
       carneiro.parentElement == margembaixo
-    )
-      return true;
-    else if (
+    ) {
+      alert("Você perdeu!");
+      resetar();
+    } else if (
       carneiro.parentElement == margembaixo &&
       alface.parentElement == margembaixo
-    )
-      return true;
-    else return false;
+    ) {
+      alert("Você perdeu!");
+      resetar();
+    }
   }
 }
