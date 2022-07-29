@@ -5,6 +5,7 @@ const alface = document.querySelector("#alface");
 
 const desce = document.querySelector("#desce");
 const sobe = document.querySelector("#sobe");
+const reset = document.querySelector("#reset");
 
 fazendeiro.addEventListener("click", moveFazendeiro);
 lobo.addEventListener("click", moveLobo);
@@ -13,6 +14,7 @@ alface.addEventListener("click", moveAlface);
 
 desce.addEventListener("click", descer);
 sobe.addEventListener("click", subir);
+reset.addEventListener("click", resetar);
 
 function moveFazendeiro(event) {
   embarque_desembarque(fazendeiro);
@@ -44,6 +46,15 @@ function subir(event) {
     cima.style.visibility = "visible";
     baixo.style.visibility = "hidden";
   }
+}
+
+function resetar(event) {
+  margemcima.appendChild(fazendeiro);
+  margemcima.appendChild(lobo);
+  margemcima.appendChild(carneiro);
+  margemcima.appendChild(alface);
+  cima.style.visibility = "visible";
+  baixo.style.visibility = "hidden";
 }
 
 function embarque_desembarque(passageiro) {

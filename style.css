@@ -28,6 +28,11 @@
   font-size: 5em;
 }
 
+#reset {
+  float: right;
+  font-size: 5em;
+}
+
 #desce {
   float: right;
   font-size: 5em;
